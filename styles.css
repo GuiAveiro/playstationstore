@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(15, 144, 170);
+    background: linear-gradient(90deg, rgba(15, 144, 170, 1) 28%, rgba(191, 31, 177, 1) 91%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: center;
+    height: 100vmax;
+}
+
+.container {
+    width: 80%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.topo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    margin: 30px 0;
+}
+
+nav {
+    width: 100%;
+    text-align: right;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+}
+
+li:hover {
+    color: rgba(191, 31, 177, 1);
+}
+
+.meio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.column-1 {
+    margin-left: 50px;
+    position: relative;
+}
+
+h2 {
+    font-size: 54px;
+}
+
+h3 {
+    font-size: 30px;
+    color: #707070;
+    font-weight: 100;
+    margin: 20px 0;
+}
+
+.column-1 p {
+    font-size: 16px;
+    color: #b7b7b7;
+    font-weight: 100;
+}
+
+.column-1::before {
+    width: 10px;
+    height: 57%;
+    content: "";
+    position: absolute;
+    left: -40px;
+    top: 8px;
+    background: rgb(15, 144, 170);
+    background: linear-gradient(90deg, rgba(15, 144, 170, 1) 17%, rgba(191, 31, 177, 1) 50%);
+}
+
+h4 {
+    font-size: 20px;
+    color: black;
+    margin: 30px 0;
+}
+
+.button1 {
+    width: 140px;
+    border: none;
+    padding: 12px 10px;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    background: rgb(15, 144, 170);
+    background: linear-gradient(90deg, rgba(15, 144, 170, 1) 17%, rgba(191, 31, 177, 1) 50%);
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+}
+
+.button1 img {
+    width: 25px;
+    display: none;
+}
+
+.button1:hover {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.button1:hover img {
+    display: block;
+}
+
+.column-2 {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.controller {
+    width: 80%;
+    z-index: 2;
+    animation: movecontroller 2s infinite alternate ease-in-out;
+}
+
+.caixavazia {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgb(15, 144, 170);
+    background: linear-gradient(90deg, rgba(15, 144, 170, 1) 17%, rgba(191, 31, 177, 1) 50%);
+    height: 100%;
+    width: 80%;
+    border-radius: 20px 0 0 20px;
+    z-index: 1;
+    transform: translateX(170px);
+    overflow: hidden;
+}
+
+.button2 {
+    z-index: 2;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button2 img {
+    height: 45px;
+    width: 45px;
+}
+
+.sociaislink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sociaislink img {
+    height: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 25px;
+    margin-right: 15px;
+    display: none;
+}
+
+@media (max-width: 760px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        overflow-y: auto;
+    }
+    .meio {
+        flex-direction: column-reverse;
+    }
+    .column-2 {
+        margin-bottom: 30px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    .caixavazia {
+        transform: translateX(70px);
+    }
+    #menu-list {
+        position: relative;
+        top: 60px;
+        left: 60px;
+        overflow: hidden;
+        transition: all 0.8s ease-in-out;
+    }
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+    .nav-li {
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+@keyframes movecontroller {
+    from {
+        transform: translate(-5%, -5%) rotate(-5deg);
+    }
+}
